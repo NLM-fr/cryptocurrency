@@ -20,7 +20,7 @@ We need to connect to our VPS I used the SSH connection with Visual Studio
 We are going to create a Solana wallet on the machine we use this command to install Solana tools:
 
 ```
-sh -c "$(curl -sSfL https://release.solana.com/v&.8.5/install)"
+sh -c "$(curl -sSfL https://release.solana.com/v1.8.5/install)"
 ```
 
 Then we need to exit from our terminal 'Exit' and log back in so our PATH variable are uptaded on our SHELL
