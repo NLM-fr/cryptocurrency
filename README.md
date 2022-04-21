@@ -16,7 +16,8 @@ First of all we need to setup our linux machine
 I used a VPS I have from OVH, I have setup Debian | Docker since I use this server for other projects too.
 We need to connect to our VPS I used the SSH connection with Visual Studio
 
-## Wallet creation
+## Cryptocurrency Creation
+### Wallet creation
 We are going to create a Solana wallet on the machine we use this command to install Solana tools:
 
 ```
@@ -38,27 +39,63 @@ Press Enter if you don't want to enter a Passphrase
 - The seedphrase and passphrase needs to be saved somewhere in case we need to recover the wallet so it needs to be kept safely somewhere 
 
 
+- From a wallet with SOL send enough SOL to cover the few transaction fees we'll have to your public key we just created.
 
+- Check balance on the wallet with: 
+```
+solana balance
+```
 
+### Solana language install
+
+We are now going to install the Solana language
 
 ```
-solana balance #check balance on the wallet	
+sudo apt update
+curl https://sh.rustup.rs -sSf | sh # Solana language installation
+Press "1" for default install
+Exit and log back into your server
+```
+
+### Install prereqs & tools
+
+```
 sudo apt install libudev-dev
 sudo apt install libssl-dev pkg-config
 sudo apt install build-essential -y
-cargo install spl-token-cli
+cargo install spl-token-cli   #intalling solana token programme to install a token on the blockchain of solana
+```
+Wait ...
+
+### Token creation
+
+```
 spl-token create-token #creating the token we get a token ID (this costs some sol in my case 0.0014716 SOL)
-spl-token create-account tokenid #creating an account that will hold all the token (Creation cost 0.00204428 SOL) 
-spl-token mint tokenid amount tokenaccountid #we are minting the amount of token we want for our token for the tokenid to the address of the token(cost 0.000005 SOL)
-spl-token accounts										#we can check the amount of token minted
+```
+Copy the token ID and save it for later and replace it in the tokenid
+You can now an account that will hold all the token (Creation cost 0.00204428 SOL) 
+```
+spl-token create-account tokenid 
+```
+You are now going to mint the amount of token we want for our token from the tokenid to the address of the token(cost 0.000005 SOL)
+```
+spl-token mint tokenid amount tokenaccountid 
+```
+You can now check the amount of token minted
+```
+spl-token accounts
 ```
 
-Creation of a phantom wallet to send token
-spl-token transfer --fund-recipient --allow-unfunded-recipient tokenid amount recipientaddress 	#we are transfering funds to an address from our token address (cost 0.00204428 SOL)
---fund-recipient					#funding the wallet creation for our token
---allow-unfunded-recipient				#allowing the empty wallet to receive token
+### Creation of a phantom wallet to send token
 
-Name and Logo for our token:
+We need to transfer the funds to an address from our token address (cost 0.00204428 SOL)
+```
+spl-token transfer --fund-recipient --allow-unfunded-recipient tokenid amount recipientaddress 	
+```
+--fund-recipient					#funding the wallet creation for our token.  
+--allow-unfunded-recipient			#allowing the empty wallet to receive token.  
+
+## Name and Logo for our token:
 
 We need to upload our logo less then 200kb to a github repository and get the address of the download link https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png
 Fork the repository of Solana Labs https://github.com/solana-labs/token-list (press . when on the page of the forked repository to open visual studio on github)
