@@ -5,9 +5,17 @@ I'll explain here the process of creating my own token named SPACE Coin
 
 ## Table of contents
 
-* [Server](#server)
-* [Deployment](#deployment)
-* [Author Information](#author-information)
+<!--ts-->
+   * [Server Setup](#server-setup)
+   * [Cryptocurrency Creation](#cryptocurrency-creation)
+      * [Wallet creation](#wallet-creation)
+      * [Solana language install](#solana-language-install)
+      * [Install prereqs](#install-prereqs)
+      * [Token creation](#token-creation)
+      * [Creating phantom wallet](#creating-wallet)
+   * [Name and Logo](#name-and-logo)
+
+<!--te-->
 
 ## Server Setup
 
@@ -57,7 +65,7 @@ Press "1" for default install
 Exit and log back into your server
 ```
 
-### Install prereqs & tools
+### Install prereqs
 
 ```
 sudo apt install libudev-dev
@@ -86,7 +94,7 @@ You can now check the amount of token minted
 spl-token accounts
 ```
 
-### Creation of a phantom wallet to send token
+### Creating wallet
 
 We need to transfer the funds to an address from our token address (cost 0.00204428 SOL)
 ```
@@ -95,7 +103,7 @@ spl-token transfer --fund-recipient --allow-unfunded-recipient tokenid amount re
 --fund-recipient					#funding the wallet creation for our token.  
 --allow-unfunded-recipient			#allowing the empty wallet to receive token.  
 
-## Name and Logo for our token:
+## Name and Logo
 
 We need to upload our logo less then 200kb to a github repository and get the address of the download link https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png.  
 Fork the repository of Solana Labs https://github.com/solana-labs/token-list (press . when on the page of the forked repository to open visual studio on github)
