@@ -97,14 +97,15 @@ spl-token transfer --fund-recipient --allow-unfunded-recipient tokenid amount re
 
 ## Name and Logo for our token:
 
-We need to upload our logo less then 200kb to a github repository and get the address of the download link https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png
+We need to upload our logo less then 200kb to a github repository and get the address of the download link https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png.  
 Fork the repository of Solana Labs https://github.com/solana-labs/token-list (press . when on the page of the forked repository to open visual studio on github)
 
-Then in the asset repository we are going to add our token address
-Add a repository with the tokenid as name and upload the logo in there.
+Then in the asset repository we are going to add our token address.  
+Add a repository with the tokenid as name and upload the logo in there.  
 
-Then we need to add our token to the solana.tokenlist.json in the /src/tockens repository
-Add this to the end of the json
+Then we need to add our token to the solana.tokenlist.json in the /src/tokens repository.  
+Add this to the end of the json and edit it to your token Symbol, name and logo URI.  
+```
 {
       "chainId": 101,
       "address": "tokenid",
@@ -116,16 +117,19 @@ Add this to the end of the json
         "social-token"
       ]
     }
-We just need to commit the changes with a message "Adding Space Coin token"
+```
+We just need to commit the changes with a message "Adding Space Coin token".  
 
-We are going to add a pull request to the Solana Labs github repository 
-Go to Pull requests and press New pull request
-Select compare accross forks and change the head repostory to the one we forked and create pull request 
-Then wait for everything to upload and you should be good you can go on https://solscan.io/ to check your new tocken 
+We are going to add a pull request to the Solana Labs github repository.  
+Go to Pull requests and press New pull request.  
+Select compare accross forks and change the head repostory to the one we forked and create pull request.  
+Then wait for everything to upload.  
+
+You can now go on https://solscan.io/ to check your new token.  
 
 
 
-Space SPACE
-Token ID/address	9WNFtVYj1dUiF5nUM7zBz644hPbKgEDuxk6iHAohQfii
-Token account ID 	CDNyMQZJ6dy7uec43H7MjDfSmLgziq1y5QAqHvoFT4MF
-Token Logo		https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png
+Space SPACE.  
+Token ID/address	9WNFtVYj1dUiF5nUM7zBz644hPbKgEDuxk6iHAohQfii.  
+Token account ID 	CDNyMQZJ6dy7uec43H7MjDfSmLgziq1y5QAqHvoFT4MF.  
+Token Logo		https://raw.githubusercontent.com/NLM-fr/cryptocurrency/main/logo.png.  
